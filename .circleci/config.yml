@@ -170,10 +170,12 @@ jobs:
       - run:
           name: Echo Release
           command: |
-            echo "export NPM_TOKEN=$NUI_URL" >> $BASH_ENV
-            echo "export GH_TOKEN=$GITHUB_TOKEN" >> $BASH_ENV
+            echo "export NPM_TOKEN=$ARTIFACTORY_USER" >> $BASH_ENV
+            echo "export GH_TOKEN=$ARTIFACTORY_USER" >> $BASH_ENV
             echo "Getting ready to release!!"
             printenv | sed 's;=.*;;' | sort
+            echo "BASH_ENV is..."
+            cat $BASH_ENV
             npm install
             npx semantic-release
             #cd ~
