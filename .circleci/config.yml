@@ -170,10 +170,9 @@ jobs:
       - run:
           name: Echo Release
           command: |
-            echo "export NPM_TOKEN=$ARTIFACTORY_USER" >> $BASH_ENV
-            echo "export GH_TOKEN=$ARTIFACTORY_USER" >> $BASH_ENV
+            export NPM_TOKEN=$ARTIFACTORY_TOKEN
+            export GH_TOKEN=$GITHUB_TOKEN
             echo "Getting ready to release!!"
-            echo "value for GH_TOKEN is $GH_TOKEN"
             printenv | sed 's;=.*;;' | sort
             echo "BASH_ENV is..."
             cat $BASH_ENV
