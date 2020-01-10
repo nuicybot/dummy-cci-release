@@ -422,9 +422,9 @@ jobs:
             cd ~
             git clone git@git.corp.adobe.com:nui/infra.git
             cd ~/project
-            .~/infra/scripts/nui-release.sh
+            #.~/infra/scripts/nui-release.sh
             echo "Getting ready to release!!"
-            # npm run semantic-release
+            npm run semantic-release
 
 
   validate_config:
