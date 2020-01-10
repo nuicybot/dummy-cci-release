@@ -173,6 +173,7 @@ jobs:
             echo "export NPM_TOKEN=$NUI_URL" >> $BASH_ENV
             echo "export GH_TOKEN=$GITHUB_TOKEN" >> $BASH_ENV
             echo "Getting ready to release!!"
+            printenv | sed 's;=.*;;' | sort
             npm install
             npx semantic-release
             #cd ~
