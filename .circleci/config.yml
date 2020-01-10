@@ -419,12 +419,14 @@ jobs:
       - run:
           name: Echo Release
           command: |
-            cd ~
-            git clone git@git.corp.adobe.com:nui/infra.git
-            cd ~/project
-            #.~/infra/scripts/nui-release.sh
+            echo "export NPM_TOKEN=$NUI_URL" >> $BASH_ENV
+            echo "export GH_TOKEN=$GITHUB_TOKEN" >> $BASH_ENV
             echo "Getting ready to release!!"
-            npm run semantic-release
+            npm install
+            npx run semantic-release
+            #cd ~
+            #git clone git@git.corp.adobe.com:nui/infra.git
+            #~/infra/scripts/nui-release.sh
 
 
   validate_config:
