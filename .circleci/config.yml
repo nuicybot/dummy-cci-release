@@ -165,6 +165,8 @@ jobs:
       - image: circleci/node:12.0.0
     steps:
       - checkout
+      - *ssh_keys
+      - *artifactory_login
       - run:
           name: Echo Release
           command: |
@@ -172,7 +174,7 @@ jobs:
             echo "export GH_TOKEN=$GITHUB_TOKEN" >> $BASH_ENV
             echo "Getting ready to release!!"
             npm install
-            npx run semantic-release
+            npx semantic-release
             #cd ~
             #git clone git@git.corp.adobe.com:nui/infra.git
             #~/infra/scripts/nui-release.sh
