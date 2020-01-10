@@ -173,6 +173,7 @@ jobs:
             echo "export NPM_TOKEN=$ARTIFACTORY_USER" >> $BASH_ENV
             echo "export GH_TOKEN=$ARTIFACTORY_USER" >> $BASH_ENV
             echo "Getting ready to release!!"
+            echo "value for GH_TOKEN is $GH_TOKEN"
             printenv | sed 's;=.*;;' | sort
             echo "BASH_ENV is..."
             cat $BASH_ENV
