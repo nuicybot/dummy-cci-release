@@ -1,11 +1,11 @@
 {
   "name": "@nui/dummy-cci-release",
-  "version": "0.0.0-semantically-released",
+  "version": "0.0.0-development",
   "description": "dummy repo for testing release",
   "main": "src/index.js",
   "scripts": {
     "test": "mocha src/index.test.js",
-    "semantic-release": "semantic-release pre && npm publish && semantic-release post"
+    "semantic-release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -23,6 +23,6 @@
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^7.0.0",
-    "semantic-release": "^16.0.0"
+    "semantic-release": "^16.0.1"
   }
 }

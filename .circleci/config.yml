@@ -171,9 +171,9 @@ jobs:
           name: Echo Release
           command: |
             export NPM_TOKEN=$ARTIFACTORY_TOKEN
-            export GH_TOKEN=$MY_GIT_TOKEN
+            export GH_TOKEN=$GITHUB_TOKEN
             #export GITHUB_URL="https://git.corp.adobe.com/nui/$CIRCLE_PROJECT_REPONAME"
-            #export GITHUB_PREFIX=$GITHUB_API
+            export GITHUB_PREFIX=$GITHUB_API
             echo "Getting ready to release!!"
             # printenv | sed 's;=.*;;' | sort
             npm install
