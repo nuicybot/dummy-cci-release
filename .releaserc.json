@@ -7,16 +7,16 @@
         "release": "major"
       },
       {
-        "scope": "no-release",
-        "release": false
-      },
-      {
-        "type": "feat",
+        "type": "New",
         "release": "minor"
       },
       {
         "type": "*",
         "release": "patch"
+      },
+      {
+        "scope": "no-release",
+        "release": false
       }
     ],
     "parserOpts": {
