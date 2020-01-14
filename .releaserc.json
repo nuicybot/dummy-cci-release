@@ -1,6 +1,6 @@
 {
   "analyzeCommits": {
-    "preset": "angular",
+    "preset": "eslint",
     "releaseRules": [
       {
         "breaking": true,
