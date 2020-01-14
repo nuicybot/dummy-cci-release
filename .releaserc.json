@@ -1,0 +1,29 @@
+{
+  "analyzeCommits": {
+    "preset": "angular",
+    "releaseRules": [
+      {
+        "breaking": true,
+        "release": "major"
+      },
+      {
+        "scope": "no-release",
+        "release": false
+      },
+      {
+        "type": "feat",
+        "release": "minor"
+      },
+      {
+        "type": "*",
+        "release": "patch"
+      }
+    ],
+    "parserOpts": {
+      "noteKeywords": [
+        "BREAKING CHANGE",
+        "BREAKING CHANGES"
+      ]
+    }
+  }
+}
