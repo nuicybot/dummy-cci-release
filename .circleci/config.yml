@@ -174,7 +174,7 @@ jobs:
             #export GH_TOKEN=$GITHUB_TOKEN
             echo "Getting ready to release!!"
             npm install
-            npx semantic-release
+            npx semantic-release --debug
             #cd ~
             #git clone git@git.corp.adobe.com:nui/infra.git
             #~/infra/scripts/nui-release.sh
