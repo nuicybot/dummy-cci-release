@@ -7,11 +7,11 @@
         "release": "major"
       },
       {
-        "type": "New",
+        "tag": "New",
         "release": "minor"
       },
       {
-        "type": "*",
+        "tag": "*",
         "release": "patch"
       },
       {
