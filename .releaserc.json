@@ -3,7 +3,7 @@
     "preset": "eslint",
     "releaseRules": [
       {
-        "breaking": true,
+        "tag": "Breaking",
         "release": "major"
       },
       {
