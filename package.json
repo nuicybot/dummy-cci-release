@@ -41,6 +41,10 @@
               "release": false
             },
             {
+              "type": "feat",
+              "release": "minor"
+            },
+            {
               "type": "/.*/",
               "release": "patch"
             }
