@@ -45,7 +45,7 @@
               "release": "minor"
             },
             {
-              "type": "/.*/",
+              "type": "*",
               "release": "patch"
             }
           ],
