@@ -19,7 +19,7 @@
         "release": "minor"
       },
       {
-        "tag": "no-release",
+        "subject": "[no-release]",
         "release": false
       },
       {
