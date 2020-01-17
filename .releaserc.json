@@ -7,16 +7,24 @@
         "release": "major"
       },
       {
+        "tag": "breaking",
+        "release": "major"
+      },
+      {
         "tag": "New",
         "release": "minor"
       },
       {
-        "subject": "*",
-        "release": "patch"
+        "tag": "new",
+        "release": "minor"
       },
       {
-        "scope": "no-release",
+        "tag": "no-release",
         "release": false
+      },
+      {
+        "subject": "*",
+        "release": "patch"
       }
     ],
     "parserOpts": {

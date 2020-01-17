@@ -173,12 +173,43 @@ jobs:
             #export NPM_TOKEN=$ARTIFACTORY_TOKEN
             #export GH_TOKEN=$GITHUB_TOKEN
             echo "Getting ready to release!!"
+            # check for "action" folder
+            if [ -d "action" ]; then
+                cd action
+            fi
             npm install
-            npx semantic-release --debug
+            npx semantic-release
+            #TODO update README.md
+
+  dependent-version-update:
+    docker:
+      - image: circleci/node:12.0.0
+    steps:
+      - checkout
+      - *ssh_keys
+      - *artifactory_login
+      - run:
+          name: Create PR for dependent repos to update version
+          command: |
+            cd ~
+            mkdir appLatest && cd appLatest && mkdir bridgeDir && cd bridgeDir
+            #~/appLatest/bridgeDir/app
+            git clone git@git.corp.adobe.com:nui/app.git
+            cd app
+            # TODO change this
+            git checkout testing-cci-release
+            npm install
+            #~/ci-dependency-it
+            cd ~
+            git clone git@git.corp.adobe.com:nui/ci-dependency-it.git
+            cd ci-dependency-it
+            git checkout new-release
+            node ~/ci-dependency-it/pack-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
+            
             #cd ~
             #git clone git@git.corp.adobe.com:nui/infra.git
             #~/infra/scripts/nui-release.sh
-
+          
 
   validate_config:
     working_directory: ~/validate
