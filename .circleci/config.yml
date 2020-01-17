@@ -178,7 +178,7 @@ jobs:
                 cd action
             fi
             npm install
-            npx semantic-release
+            npx semantic-release --debug
             #TODO update README.md
 
   dependent-version-update:
