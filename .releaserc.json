@@ -19,11 +19,11 @@
         "release": "minor"
       },
       {
-        "subject": "[no-release]",
+        "subject": "no-release:",
         "release": false
       },
       {
-        "subject": "![no-release]*",
+        "subject": "!no-release:*",
         "release": "patch"
       }
     ],
