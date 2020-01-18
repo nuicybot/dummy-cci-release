@@ -23,7 +23,7 @@
         "release": false
       },
       {
-        "subject": "*",
+        "subject": "![no-release]*",
         "release": "patch"
       }
     ],
