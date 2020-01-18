@@ -207,6 +207,7 @@ jobs:
             # TODO change-this
             git checkout new-release
             git branch
+            npm install
             node ~/ci-dependency-it/release-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
             
             #cd ~
