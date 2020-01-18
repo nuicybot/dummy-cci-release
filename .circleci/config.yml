@@ -206,7 +206,8 @@ jobs:
             cd ci-dependency-it
             # TODO change-this
             git checkout new-release
-            node ~/ci-dependency-it/pack-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
+            git branch
+            node ~/ci-dependency-it/release-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
             
             #cd ~
             #git clone git@git.corp.adobe.com:nui/infra.git
