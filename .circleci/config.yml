@@ -196,13 +196,15 @@ jobs:
             #~/appLatest/bridgeDir/app
             git clone git@git.corp.adobe.com:nui/app.git
             cd app
-            # TODO change this
+            # TODO change-this
             git checkout testing-cci-release
+            git branch
             npm install
             #~/ci-dependency-it
             cd ~
             git clone git@git.corp.adobe.com:nui/ci-dependency-it.git
             cd ci-dependency-it
+            # TODO change-this
             git checkout new-release
             node ~/ci-dependency-it/pack-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
             
@@ -246,6 +248,10 @@ workflows:
             filters:
               branches:
                 only: master
+            context: nui
+        - dependent-version-update:
+            requires:
+              - release
             context: nui
   #        - validate_config:
   #            context: nui
