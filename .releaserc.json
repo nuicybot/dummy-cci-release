@@ -1,37 +1,66 @@
 {
-  "analyzeCommits": {
-    "preset": "eslint",
-    "releaseRules": [
-      {
-        "tag": "Breaking",
-        "release": "major"
-      },
-      {
-        "tag": "breaking",
-        "release": "major"
-      },
-      {
-        "tag": "New",
-        "release": "minor"
-      },
-      {
-        "tag": "new",
-        "release": "minor"
-      },
-      {
-        "subject": "no-release:",
-        "release": false
-      },
-      {
-        "subject": "!no-release:*",
-        "release": "patch"
+  "plugins": [
+    ["@semantic-release/commit-analyzer", {
+      "preset": "eslint",
+      "releaseRules": [
+        {
+          "tag": "Breaking",
+          "release": "major"
+        },
+        {
+          "tag": "breaking",
+          "release": "major"
+        },
+        {
+          "tag": "New",
+          "release": "minor"
+        },
+        {
+          "tag": "new",
+          "release": "minor"
+        },
+        {
+          "subject": "no-release:",
+          "release": false
+        },
+        {
+          "subject": "!no-release:*",
+          "release": "patch"
+        }
+      ],
+      "parserOpts": {
+        "noteKeywords": [
+          "BREAKING CHANGE",
+          "BREAKING CHANGES"
+        ]
       }
-    ],
-    "parserOpts": {
-      "noteKeywords": [
-        "BREAKING CHANGE",
-        "BREAKING CHANGES"
-      ]
-    }
-  }
+    }],
+    ["@semantic-release/release-notes-generator", {
+      "preset": "conventionalcommits",
+      "presetConfig": {
+        "types": [
+          {
+            "tag": "Breaking",
+            "section": ":sparkles: Breaking",
+            "hidden": false
+          },
+          {
+            "tag": "breaking",
+            "section": ":sparkles: Breaking",
+            "hidden": false
+          },
+          {
+            "tag": "new",
+            "section": ":memo: New",
+            "hidden": false
+          },
+          {
+            "tag": "New",
+            "section": ":memo: New",
+            "hidden": false
+          }
+        ]
+      }
+    }]
+  ]
 }
