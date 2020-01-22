@@ -59,13 +59,7 @@
             "section": ":memo: New",
             "hidden": false
           }
-        ],
-        "parserOpts": {
-          "noteKeywords": [
-            "BREAKING CHANGE",
-            "BREAKING CHANGES"
-          ]
-        }
+        ]
       }
     }]
   ]
