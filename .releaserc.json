@@ -59,7 +59,7 @@
             "hidden": false
           },
           {
-            "subject": "[\\s\\S]*",
+            "subject": ".*",
             "section": ":memo: Bug-Fix",
             "hidden": false
           }
