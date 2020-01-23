@@ -36,9 +36,8 @@
       }
     }],
     ["@semantic-release/release-notes-generator", {
-      "preset": "conventionalcommits",
-      "presetConfig": {
-        "types": [
+      "preset": "eslint",
+      "presetConfig": [
           {
             "tag": "Breaking",
             "section": ":sparkles: Breaking",
@@ -59,8 +58,7 @@
             "section": ":memo: New",
             "hidden": false
           }
-        ]
-      }
+      ]
     }],
     ["@semantic-release/npm"],
     ["@semantic-release/github"]
