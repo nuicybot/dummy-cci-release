@@ -59,7 +59,7 @@
             "hidden": false
           },
           {
-            "subject": ".*",
+            "subject": "(?s).*",
             "section": ":memo: Bug-Fix",
             "hidden": false
           }
