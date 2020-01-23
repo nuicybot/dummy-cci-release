@@ -57,6 +57,11 @@
             "tag": "New",
             "section": ":memo: New",
             "hidden": false
+          },
+          {
+            "subject": "!no-release:*",
+            "section": ":memo: Bug-Fix",
+            "hidden": false
           }
       ]
     }],
