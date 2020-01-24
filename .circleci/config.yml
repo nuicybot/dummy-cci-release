@@ -192,17 +192,16 @@ jobs:
             cp ~/circleci/.releaserc.json $dest/
             sleep 2
             git status
-            cat package.json
+            
             npm install
             npm install --no-save semantic-release
-            npm install --no-save conventional-changelog-eslint
-            cat package.json
-            
+            npm install --no-save conventional-changelog-conventionalcommits
             
             npx semantic-release --debug
             
-            git status
             cat package.json
+            git status
+            git diff
             newVersion="$(git describe --tags)"
             echo "currentVersion -> $currentVersion & newVersion -> $newVersion"
             versionChanged=true
