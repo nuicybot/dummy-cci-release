@@ -189,7 +189,7 @@ jobs:
                 cd action
                 dest="/home/circleci/project/action/"
             fi
-            cp ~/circleci/.releaserc.json $dest/releaserc.json.bak
+            cp ~/circleci/.releaserc.json $dest/
             sleep 2
             git status
             cat package.json
