@@ -193,17 +193,14 @@ jobs:
             sleep 2
             git status
             cat package.json
+            npm install
             npm install --no-save semantic-release
             npm install --no-save conventional-changelog-eslint
             cat package.json
             
             
-            npm install
             npx semantic-release --debug
             
-            
-            rm -rf releaserc.json.bak
-            sleep 2
             git status
             cat package.json
             newVersion="$(git describe --tags)"
