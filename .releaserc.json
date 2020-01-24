@@ -37,33 +37,10 @@
     }],
     ["@semantic-release/release-notes-generator", {
       "preset": "eslint",
-      "presetConfig": [
-          {
-            "tag": "Breaking",
-            "section": ":sparkles: Breaking",
-            "hidden": false
-          },
-          {
-            "tag": "breaking",
-            "section": ":sparkles: Breaking",
-            "hidden": false
-          },
-          {
-            "tag": "new",
-            "section": ":memo: New",
-            "hidden": false
-          },
-          {
-            "tag": "New",
-            "section": ":memo: New",
-            "hidden": false
-          },
-          {
-            "subject": "(?s).*",
-            "section": ":memo: Bug-Fix",
-            "hidden": false
-          }
-      ]
+      "presetConfig": {
+        "message": ".*",
+        "subject": ".*"
+      }
     }],
     ["@semantic-release/npm"],
     ["@semantic-release/github"]

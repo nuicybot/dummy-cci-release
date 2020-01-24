@@ -174,12 +174,38 @@ jobs:
             #export GH_TOKEN=$GITHUB_TOKEN
             echo "Getting ready to release!!"
             currentVersion="$(git describe --tags)";
+            cd ~
+            git clone git@git.corp.adobe.com:nui/circleci.git
+            cd circleci
+            git checkout test-releaserc
+            git pull
+            ls
+            dest="/home/circleci/project/"
+
+            cd ~/project/
             # check for "action" folder
+
             if [ -d "action" ]; then
                 cd action
+                dest="/home/circleci/project/action/"
             fi
+            cp ~/circleci/.releaserc.json $dest/releaserc.json.bak
+            sleep 2
+            git status
+            cat package.json
+            npm install -D semantic-release
+            npm install -D conventional-changelog-eslint
+            cat package.json
+            
+            
             npm install
             npx semantic-release --debug
+            
+            
+            rm -rf releaserc.json.bak
+            sleep 2
+            git status
+            cat package.json
             newVersion="$(git describe --tags)"
             echo "currentVersion -> $currentVersion & newVersion -> $newVersion"
             versionChanged=true
