@@ -201,7 +201,6 @@ jobs:
             
             cat package.json
             git status
-            git diff
             newVersion="$(git describe --tags)"
             echo "currentVersion -> $currentVersion & newVersion -> $newVersion"
             versionChanged=true
