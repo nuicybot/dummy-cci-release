@@ -235,7 +235,7 @@ jobs:
                   git diff
                   git commit -m "no-release: badge in README.md to $newVersion"
                   git push origin "update-badge-readme-$newVersion"
-                  curl -X POST -H "Authorization: token $GITHUB_TOKEN" -d "{\"title\":\"no-release: update badge in readme \",\"base\":\"master\", \"head\":\""update-badge-readme-$newVersion"\", \"reviewers\":[\"krmenon\",\"$CIRCLE_USERNAME\"]}" "$GITHUB_API/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/pulls"
+                  curl -X POST -H "Authorization: token $GITHUB_TOKEN" -d "{\"title\":\"no-release: update badge in readme \",\"base\":\"master\", \"head\":\""update-badge-readme-$newVersion"\", \"requested_reviewers\":[\"krmenon\",\"$CIRCLE_USERNAME\"]}" "$GITHUB_API/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/pulls"
               fi
             fi
       - persist_to_workspace:
