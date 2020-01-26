@@ -229,7 +229,7 @@ jobs:
                   sed -i -E \
                       -e "s|(img.shields.io/badge/.*)-([0-9]+\.[0-9]+\.[0-9]+)-blue\.svg|\1-${newVersion}-blue.svg|" \
                       -e "s|(img.shields.io/badge/.*)-([0-9]+\.[0-9]+\.[0-9]+)\.tgz|\1-${newVersion}.tgz|" \
-                      "$readme" && echo "update to Readme.md"
+                      "$readme" && echo "updated Readme.md"
                   git add "$readme"
                   git status
                   git diff
