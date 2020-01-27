@@ -170,8 +170,6 @@ jobs:
       - run:
           name: Echo Release
           command: |
-            #export NPM_TOKEN=$ARTIFACTORY_TOKEN
-            #export GH_TOKEN=$GITHUB_TOKEN
             echo "Getting ready to release!!"
             currentVersion="$(git describe --tags)";
             cd ~
@@ -189,16 +187,13 @@ jobs:
                 cd action
                 dest="/home/circleci/project/action/"
             fi
-            cp ~/circleci/release.config.js $dest/
+            cp ~/circleci/.releaserc.json $dest/
             sleep 2
             git status
-            
             npm install
             npm install --no-save semantic-release
             npm install --no-save conventional-changelog-eslint
-            
             npx semantic-release --debug
-            
             cat package.json
             git status
             newVersion="$(git describe --tags)"
