@@ -2,6 +2,6 @@ var avengerNames = require('./avenger-names.json');
 var ura = require('unique-random-array');
 
 module.exports = {
-  allName: avengerNames,
+  all: avengerNames,
   randomNames: ura(avengerNames)
 };
