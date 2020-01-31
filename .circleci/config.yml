@@ -314,9 +314,13 @@ workflows:
               branches:
                 only: master
             context: nui
-        - dependent-version-update:
+        - hold-dependent-version-update:
+            type: approval # requires that an in-app button be clicked by an appropriate member of the project to continue.
             requires:
               - release
+        - dependent-version-update:
+            requires:
+              - hold-dependent-version-update
             context: nui
   #        - validate_config:
   #            context: nui
