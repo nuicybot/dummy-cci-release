@@ -168,7 +168,7 @@ jobs:
       - *ssh_keys
       - *artifactory_login
       - run:
-          name: Echo Release
+          name: Releasing module - npm publish and create git tags
           command: |
             echo "Getting ready to release!!"
             currentVersion="$(git describe --tags)";
@@ -214,7 +214,6 @@ jobs:
               git config --global user.email "nuicid@adobe.com"
               git config --global user.name "nuicid"
               git stash save
-              git checkout "update-badge-readme-$newVersion" 2>/dev/null || git checkout -b "update-badge-readme-$newVersion"
               if [ -e README.md ]; then
                   readme=README.md
               fi
@@ -229,9 +228,28 @@ jobs:
                   git status
                   git diff
                   git commit -m "no-release: badge in README.md to $newVersion"
-                  git push origin "update-badge-readme-$newVersion"
-                  curl -X POST -H "Authorization: token $GITHUB_TOKEN" -d "{\"title\":\"no-release: update badge in readme \",\"base\":\"master\", \"head\":\""update-badge-readme-$newVersion"\", \"reviewers\":[\"krmenon\",\"$CIRCLE_USERNAME\"]}" "$GITHUB_API/repos/$CIRCLE_PROJECT_USERNAME/$CIRCLE_PROJECT_REPONAME/pulls"
+                  git push origin master
               fi
+              ### preDependentVersionUpdate
+              cd ~
+              mkdir appLatest && cd appLatest && mkdir bridgeDir && cd bridgeDir
+              #~/appLatest/bridgeDir/app
+              git clone git@git.corp.adobe.com:nui/app.git
+              cd app
+              # TODO change-this
+              git checkout testing-cci-release
+              git branch
+              npm install
+              #~/ci-dependency-it
+              cd ~
+              git clone git@git.corp.adobe.com:nui/ci-dependency-it.git
+              cd ci-dependency-it
+              # TODO change-this
+              git checkout new-release
+              git branch
+              npm install
+              node ~/ci-dependency-it/preDependentVersionUpdate-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
+
             fi
       - persist_to_workspace:
           root: ~/tmpDir
