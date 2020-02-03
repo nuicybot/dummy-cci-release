@@ -179,10 +179,8 @@ jobs:
             git pull
             ls
             dest="/home/circleci/project/"
-
             cd ~/project/
             # check for "action" folder
-
             if [ -d "action" ]; then
                 cd action
                 dest="/home/circleci/project/action/"
@@ -227,7 +225,7 @@ jobs:
                   git add "$readme"
                   git status
                   git diff
-                  git commit -m "no-release: badge in README.md to $newVersion"
+                  git commit -m "[ci skip] badge in README.md to $newVersion"
                   git push origin master
               fi
               ### preDependentVersionUpdate
