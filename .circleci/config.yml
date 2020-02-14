@@ -271,6 +271,13 @@ jobs:
             echo "VERSION_CHANGED -> $VERSION_CHANGED"
             if [ "$VERSION_CHANGED" = "true" ]; then
               cd ~
+              git clone git@git.corp.adobe.com:nui/circleci.git
+              cd circleci
+              git checkout test-releaserc
+              git pull
+              ls
+              git status
+              cd ~
               mkdir appLatest && cd appLatest && mkdir bridgeDir && cd bridgeDir
               #~/appLatest/bridgeDir/app
               git clone git@git.corp.adobe.com:nui/app.git
