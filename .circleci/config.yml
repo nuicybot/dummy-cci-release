@@ -191,6 +191,7 @@ jobs:
             npm install
             npm install --no-save semantic-release
             npm install --no-save conventional-changelog-eslint
+            npm install --no-save @semantic-release/git
             npx semantic-release --debug
             cat package.json
             git status
