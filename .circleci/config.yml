@@ -175,7 +175,7 @@ jobs:
             cd ~
             git clone git@git.corp.adobe.com:nui/circleci.git
             cd circleci
-            git checkout test-releaserc
+            git checkout test-releaserc-1
             git pull
             ls
             dest="/home/circleci/project/"
@@ -247,7 +247,6 @@ jobs:
               git branch
               npm install
               node ~/ci-dependency-it/preDependentVersionUpdate-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
-
             fi
       - persist_to_workspace:
           root: ~/tmpDir
@@ -256,7 +255,7 @@ jobs:
 
   dependent-version-update:
     docker:
-      - image: circleci/node:12.0.0
+      - image: circleci/node:12.16.1
     steps:
       - checkout
       - *ssh_keys
@@ -273,7 +272,7 @@ jobs:
               cd ~
               git clone git@git.corp.adobe.com:nui/circleci.git
               cd circleci
-              git checkout test-releaserc
+              git checkout test-releaserc-1
               git pull
               ls
               git status
