@@ -246,7 +246,7 @@ jobs:
               git clone git@git.corp.adobe.com:nui/ci-dependency-it.git
               cd ci-dependency-it
               # TODO change-this
-              git checkout new-release
+              git checkout update-packagejson
               git branch
               npm install
               node ~/ci-dependency-it/preDependentVersionUpdate-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
@@ -293,7 +293,7 @@ jobs:
               git clone git@git.corp.adobe.com:nui/ci-dependency-it.git
               cd ci-dependency-it
               # TODO change-this
-              git checkout new-release
+              git checkout update-packagejson
               git branch
               npm install
               node ~/ci-dependency-it/release-app.js "@nui/$CIRCLE_PROJECT_REPONAME" "/home/circleci/" "project/"
