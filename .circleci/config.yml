@@ -193,6 +193,8 @@ jobs:
             npm install --no-save conventional-changelog-eslint
             npx semantic-release --debug
             cat package.json
+            git config --global user.email "nuicid@adobe.com"
+            git config --global user.name "nuicid"
             git status
             git add package.json
             git commit -m "no-release: [ci skip] update version in package json"
@@ -212,8 +214,6 @@ jobs:
             if [ "$versionChanged" = "true" ]; then
               cd ~/project
               newVersion="${newVersion:1}"
-              git config --global user.email "nuicid@adobe.com"
-              git config --global user.name "nuicid"
               git stash save
               if [ -e README.md ]; then
                   readme=README.md
