@@ -194,6 +194,9 @@ jobs:
             npx semantic-release --debug
             cat package.json
             git status
+            git add package.json
+            git commit -m "no-release: [ci skip] update version in package json"
+            git push origin master
             newVersion="$(git describe --tags)"
             echo "currentVersion -> $currentVersion & newVersion -> $newVersion"
             versionChanged=true
