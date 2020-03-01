@@ -1,6 +1,6 @@
 {
   "name": "@nui/dummy-cci-release",
-  "version": "9.0.5",
+  "version": "35.0.0",
   "description": "dummy repo for testing release",
   "main": "src/index.js",
   "scripts": {
