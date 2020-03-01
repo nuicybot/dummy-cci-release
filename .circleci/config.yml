@@ -193,13 +193,13 @@ jobs:
             npm install --no-save conventional-changelog-eslint
             npx semantic-release --debug
             cat package.json
+            newVersion="$(git describe --tags)"
             git config --global user.email "nuicid@adobe.com"
             git config --global user.name "nuicid"
             git status
             git add package.json
             git commit -m "no-release: [ci skip] update version in package json"
             git push origin master
-            newVersion="$(git describe --tags)"
             echo "currentVersion -> $currentVersion & newVersion -> $newVersion"
             versionChanged=true
             if [ "$currentVersion" = "$newVersion" ]; then
