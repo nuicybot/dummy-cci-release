@@ -189,8 +189,8 @@ jobs:
             sleep 2
             git status
             npm install
-            npm install --no-save conventional-changelog-eslint
             npm install --no-save semantic-release
+            npm install --no-save conventional-changelog-eslint
             npx semantic-release --debug
             cat package.json
             git status
