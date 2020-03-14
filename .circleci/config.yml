@@ -197,9 +197,6 @@ jobs:
             git config --global user.email "nuicid@adobe.com"
             git config --global user.name "nuicid"
             git status
-            git add package.json
-            git commit -m "no-release: [ci skip] update version in package json"
-            git push origin master
             echo "currentVersion -> $currentVersion & newVersion -> $newVersion"
             versionChanged=true
             if [ "$currentVersion" = "$newVersion" ]; then
@@ -212,6 +209,9 @@ jobs:
             #TODO update README.md
             # find readme to update
             if [ "$versionChanged" = "true" ]; then
+              git add package.json
+              git commit -m "no-release: [ci skip] update version in package json"
+              git push origin master
               cd ~/project
               newVersion="${newVersion:1}"
               git stash save
