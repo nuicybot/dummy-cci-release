@@ -4,8 +4,10 @@
 
 
 dummy repo for dummy testing cci release 1
-dependents are
+dependents of dummy-cci-release are:
 
 "@nui/dummy-cci-level-one"
 
 "@nui/dummy-cci-level-oso"
+
+
