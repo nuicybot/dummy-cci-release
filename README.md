@@ -22,3 +22,4 @@ dependents of dummy-cci-level-oso are:
 @nui/test-cci-release
 
   dependents of   '@nui/levelTsOne-test-cci' are:
+  @nui/test-cci-release
