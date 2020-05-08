@@ -1,14 +1,9 @@
 language: node_js
 os:
   - linux
-  - osx
 
 node_js:
-  - "10"
-  - "10.15"
-  - "10.19"
   - "12"
-  - "14"
 
 install:
   - npm version
@@ -16,9 +11,11 @@ install:
 
 jobs:
   include:
-    - script: npm test
+    - stage: Test
+      script: npm test
     - stage: release
-      node_js: lts/*
+      if: branch = master
+      node_js: "12"
       script: skip
       before_deploy: "echo 'Releasing to npm'"
       deploy:
