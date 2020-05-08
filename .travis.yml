@@ -13,7 +13,7 @@ jobs:
   include:
     - stage: Test
       script: npm test
-    - stage: releasing
+    - stage: release
       node_js: "12"
       script: skip
       before_deploy: "echo 'Releasing to npm'"
