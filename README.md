@@ -1,6 +1,6 @@
 # dummy-cci-release
 feat -11
-BUGFIX-RELEASE: this should do a patch release
+BUGFIX-RELEASE: this should do a patch release 1
 
 FEATURE-RELEASE: this should do a minor release
 
