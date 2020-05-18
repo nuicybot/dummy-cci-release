@@ -24,8 +24,7 @@ jobs:
           condition:  $TRAVIS_OS_NAME == linux
         provider: script
         skip_cleanup: true
-        before_script:
+        script:
           - npm install --no-save semantic-release
           - npm install --no-save conventional-changelog-eslint
-        script:
           - npx run semantic-release
