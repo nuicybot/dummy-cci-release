@@ -27,4 +27,4 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - npx run semantic-release
+          - npx semantic-release --debug
