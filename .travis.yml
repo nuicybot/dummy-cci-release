@@ -25,4 +25,6 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
+          - npm install --no-save semantic-release
+          - npm install --no-save conventional-changelog-eslint
           - npm run semantic-release
