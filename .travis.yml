@@ -28,4 +28,4 @@ jobs:
           - npm install --no-save semantic-release
           - npm install --no-save conventional-changelog-eslint
         script:
-          - npm run semantic-release
+          - npx run semantic-release
