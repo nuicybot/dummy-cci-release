@@ -1,6 +1,7 @@
 {
   "plugins": [
     ["@semantic-release/commit-analyzer", {
+      "preset": "eslint",
       "releaseRules": [
       {
         "subject": "*",
@@ -18,11 +19,6 @@
         "subject": "BREAKING-RELEASE:*",
         "release": "major"
       }
-      ],
-    "parserOpts": {
-      "noteKeywords": [
-        "BREAKING CHANGE",
-        "BREAKING CHANGES"
       ]
     }
     }],
