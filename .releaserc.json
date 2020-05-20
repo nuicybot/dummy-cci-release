@@ -31,10 +31,6 @@
       "preset": "eslint"
     }],
     ["@semantic-release/npm"],
-    ["@semantic-release/git", {
-      "assets": ["package.json", "package-lock.json"],
-      "message": "no-release: [ci skip] update version number in package json"
-    }],
     ["@semantic-release/github"]
   ]
 }
