@@ -20,8 +20,8 @@ jobs:
       before_deploy: 
         - "echo 'Releasing to npm'"
         - npm install --no-save semantic-release@17.0.7
-        - npm install --no-save @semantic-release/git@9.0.0
         - npm install --no-save conventional-changelog-eslint@3.0.8        
+        - npm install --no-save @semantic-release/git@9.0.0        
       deploy:
         on:
           branch: master
