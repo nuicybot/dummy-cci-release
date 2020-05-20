@@ -1,6 +1,6 @@
 {
   "name": "@nuicybot/dummy-cci-release",
-  "version": "56.0.0",
+  "version": "9.3.0",
   "description": "dummy repo for testing release",
   "main": "src/index.js",
   "scripts": {
